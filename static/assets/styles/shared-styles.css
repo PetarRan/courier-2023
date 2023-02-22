@@ -24,3 +24,8 @@ body.fadeIn {
         opacity: 1;
     }
 }
+
+.selected-tab {
+    background-color: #cdf3ff;
+  }
+  

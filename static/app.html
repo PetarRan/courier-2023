@@ -19,13 +19,13 @@
 
 <body class="fadeIn">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark navbar-custom">
-        <div class="container"><a class="navbar-brand" href="index.html"><img src="assets/img/icon.png"
-                    width="40px"></a><button data-bs-toggle="collapse" class="navbar-toggler"
-                data-bs-target="#navbarResponsive"><span class="visually-hidden">Toggle
+        <div class="container">
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span
+                    class="visually-hidden">Toggle
                     navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Back Home</a></li>
                 </ul>
             </div>
         </div>
@@ -34,48 +34,47 @@
         <div class="row">
             <div class="col-md-3">
                 <form>
-                    <div class="form-group">
+                    <div class="form-group mt-1">
                         <label for="fullName">Full Name</label>
                         <input type="text" class="form-control" id="fullName">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-1">
                         <label for="profession">Profession</label>
                         <input type="text" class="form-control" id="profession">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-1">
                         <label for="company">Company</label>
                         <input type="text" class="form-control" id="company">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-1">
                         <label for="mobileNumber">Mobile Number</label>
                         <input type="text" class="form-control" id="mobileNumber">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-1">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-1">
                         <label for="website">Website</label>
                         <input type="text" class="form-control" id="website">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-1">
                         <label for="linkedin">LinkedIn</label>
                         <input type="text" class="form-control" id="linkedin">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-1">
                         <label for="github">Github</label>
                         <input type="text" class="form-control" id="github">
                     </div>
-                    <div class="form-group ">
+                    <div class="form-group mt-5">
                         <label for="image">Upload Logo</label>
                         <input type="file" class="form-control-file bg-dark text-white rounded-2" id="image">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block mt-4">Generate Signature</button>
+                    <button id="generateSignature" class="btn btn-primary btn-block mt-4 btn-lg">Generate Signature</button>
                 </form>
             </div>
             <div class="col-md-6">
-                <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-                    <h1>Generated Signature</h1>
+                <div id="signature" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
                 </div>
             </div>
             <div class="col-md-3">
@@ -84,36 +83,45 @@
                         Select a Style:
                     </div>
                     <div class="card-body">
-                        <div class="card mb-3">
+                        <div id="TheProfessional" class="card mb-3 selected-tab" style="cursor: pointer;">
                             <div class="card-body">
                                 <h5 class="card-title">The Professional</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Select</a>
+                                <p class="card-text"><img src="/static/assets/img/professional.png" width="250px"></p>
                             </div>
                         </div>
-                        <div class="card mb-3">
+                        <div id="TheCreative" class="card mb-3" style="cursor: pointer;">
+                            <div class="card-body">
+                                <h5 class="card-title">Creative</h5>
+                                <p class="card-text"><img src="/static/assets/img/creative.png" width="250px"></p>
+                            </div>
+                        </div>
+                        <div id="TheTechie" class="card mb-3" style="cursor: pointer;">
                             <div class="card-body">
                                 <h5 class="card-title">Tech Savvy</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Select</a>
+                                <p class="card-text"><img src="/static/assets/img/techsavvy.png" width="250px"></p>
                             </div>
                         </div>
-                        <div class="card mb-3">
+                        <div id="TheMinimal" class="card mb-3" style="cursor: pointer;">
                             <div class="card-body">
-                                <h5 class="card-title">The Minimalist</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Select</a>
+                                <h5 class="card-title">Minimalist</h5>
+                                <p class="card-text"><img src="/static/assets/img/minimalis.png" width="250px"></p>
+                            </div>
+                        </div>
+                        <div id="TheModern" class="card mb-3" style="cursor: pointer;">
+                            <div class="card-body">
+                                <h5 class="card-title">Modern</h5>
+                                <p class="card-text"><img src="/static/assets/img/modern.png" width="250px"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/generate.js"></script>
+    <script src="assets/js/utils/selection_tabs.js"></script>
 </body>
 
 </html>
