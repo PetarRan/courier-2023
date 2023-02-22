@@ -13,7 +13,7 @@
         href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="assets/styles/shared-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 
 </head>
 
@@ -70,10 +70,17 @@
                         <label for="image">Upload Logo</label>
                         <input type="file" class="form-control-file bg-dark text-white rounded-2" id="image">
                     </div>
-                    <button id="generateSignature" class="btn btn-primary btn-block mt-4 btn-lg">Generate Signature</button>
+                    <button id="generateSignature" class="btn btn-primary btn-block mt-4 btn-lg">Generate
+                        Signature</button>
                 </form>
             </div>
             <div class="col-md-6">
+                <div class="menu-custom-top hidden">
+                    <button class="btn btn-primary" id="copy" data-clipboard-target="#signature"><i
+                            class="fa fa-clipboard"></i>&nbsp;&nbsp;Copy to Clipboard</button>
+                    <button class="btn btn-primary" id="email-me"><i class="fa fa-send"></i>&nbsp;&nbsp;Email to
+                        Me</button>
+                </div>
                 <div id="signature" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
                 </div>
             </div>
@@ -122,6 +129,12 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/generate.js"></script>
     <script src="assets/js/utils/selection_tabs.js"></script>
+    <script src="assets/js/utils/clipboard.js"></script>
 </body>
+
+<div class="alert alert-success" role="alert">
+    Signature copied to clipboard!
+</div>
+
 
 </html>

@@ -77,6 +77,7 @@ $(document).ready(function () {
 
         // Set signature HTML in page
         $("#signature").html(signatureHTML);
+        $(".menu-custom-top").removeClass('hidden');
     });
 });
 
