@@ -1,5 +1,5 @@
-import express from "express";
-import { CourierClient } from "@trycourier/courier";
+const express = require('express');
+const { CourierClient } = require('@trycourier/courier');
 
 const app = express();
 const courier = CourierClient({
@@ -12,18 +12,18 @@ app.get('/', (req, res) => {
 
 app.get("/send-message", async (req, res) => {
   try {
-    const { email, code } = req.query;
+    const { email, signature } = req.query;
     const { requestId } = await courier.send({
         message: {
           to: {
             data: {
-              code: code,
+              signature: signature,
             },
             email: email,
           },
           content: {
-            title: "One-on-One is just One step away!",
-            body: "You have been invited to chat one-on-one.\nCode to join the room is: {{code}}, or simply follow the link from here.",
+            title: "Check out your own customized Prosign!",
+            body: "Holy cow! Check this out - your personal professional e-mail signature is here.\n\n\n{{signature}}",
           },
           routing: {
             method: "single",
